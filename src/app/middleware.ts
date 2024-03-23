@@ -1,9 +1,11 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { updateSession } from "@/utils/supabase/middleware";
-import { createClient } from "../../utils/supabase/server";
+import { createClient } from "../utils/supabase/server";
 
 export async function middleware(request: NextRequest) {
+  console.log("IN MIDDLEWARE");
   const { pathname } = new URL(request.url);
+  console.log(pathname);
 
   const protectedRoutes = ["/dashboard", "/practice"]; // redirect to login
 

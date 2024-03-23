@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Tailwind fixes */
+@layer components {
+  .debug {
+    @apply border border-red-500;
+  }
+
+  .horizontal {
+    @apply flex flex-row;
+  }
+
+  .vertical {
+    @apply flex flex-col;
+  }
+
+  .horizontal.center-v {
+    @apply items-center;
+  }
+
+  .horizontal.center-h {
+    @apply justify-center;
+  }
+
+  .horizontal.center {
+    @apply justify-center items-center;
+  }
+
+  .vertical.center-v {
+    @apply justify-center;
+  }
+
+  .vertical.center-h {
+    @apply items-center;
+  }
+
+  .vertical.center {
+    @apply justify-center items-center;
+  }
+
+  .space-between {
+    @apply justify-between;
+  }
+}
+
+/* TEMP STYLES */
+input {
+  @apply border border-gray-300 rounded-md;
+}
+
+button {
+  @apply bg-blue-500 text-white px-4 py-2 rounded-md;
+}

@@ -1,6 +1,7 @@
 function Footer() {
   return <div>
-    Footer
+    <hr className="mt-4" />
+    (Footer)
   </div>
 }
 

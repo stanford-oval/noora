@@ -5,8 +5,12 @@ function SignUp() {
     <form className="vertical space-y-2">
       <h1>SIGN UP</h1>
       <div>
-        <label htmlFor="name">Name</label>
-        <input id="name" name="name" type="text" required />
+        <label htmlFor="firstname">First name:</label>
+        <input id="firstname" name="firstname" type="text" required />
+      </div>
+      <div>
+        <label htmlFor="lastname">Last name:</label>
+        <input id="lastname" name="lastname" type="text" required />
       </div>
       <div>
         <label htmlFor="email">Email:</label>
@@ -15,10 +19,6 @@ function SignUp() {
       <div>
         <label htmlFor="password1">Password:</label>
         <input id="password1" name="password" type="password" required />
-      </div>
-      <div>
-        <label htmlFor="password2">Confirm password:</label>
-        <input id="password2" name="password" type="password" required />
       </div>
       <div>
         <button formAction={signup}>Sign up</button>

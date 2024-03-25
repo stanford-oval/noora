@@ -1,7 +1,17 @@
 import Link from 'next/link'
 import { login } from '../../../utils/supabase/actions'
+import { createClient } from '@/utils/supabase/server';
+import { redirect } from 'next/navigation';
 
-export default function Login() {
+export default async function Login() {
+  const supabase = createClient();
+  const { data, error } = await supabase.auth.getUser();
+
+  if (data?.user) {
+    redirect("/dashboard");
+  }
+
+
   return (
     <form className="vertical space-y-2">
       <h1>LOG IN</h1>

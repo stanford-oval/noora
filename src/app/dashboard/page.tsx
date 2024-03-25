@@ -1,14 +1,12 @@
 import { createClient } from "@/utils/supabase/server";
 import Logout from "../_components/Logout";
 import { redirect } from "next/navigation";
+import protectRoute from "@/utils/supabase/protectRoute";
 
 async function Dashboard() {
-  const supabase = createClient()
-
-  const { data, error } = await supabase.auth.getUser()
-  if (error || !data?.user) {
-    redirect("/login")
-  }
+  const supabase = createClient();
+  const { data, error } = await supabase.auth.getUser();
+  await protectRoute();
 
   return (<div>
     <code>

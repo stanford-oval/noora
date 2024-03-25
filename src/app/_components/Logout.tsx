@@ -1,14 +1,11 @@
 "use client";
 
+import { signout } from "@/utils/supabase/actions";
 import { createClient } from "@/utils/supabase/client";
-import { redirect } from "next/navigation";
 
 function Logout() {
-  const supabase = createClient()
   return <button onClick={() => {
-    console.log("Logging out")
-    supabase.auth.signOut()
-    redirect('/')
+    signout();
   }}>
     Log out
   </button>

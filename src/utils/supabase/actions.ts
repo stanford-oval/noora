@@ -61,3 +61,19 @@ export async function signout() {
   revalidatePath("/login", "layout");
   redirect("/login");
 }
+
+export async function deleteAccount() {
+  console.log("Deleting account...");
+  const supabase = createClient(true);
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+  console.log(userData);
+  const { data: deleteData, error: deleteError } =
+    await supabase.auth.admin.deleteUser(userData.user?.id ?? "");
+  if (deleteError) {
+    console.error(deleteError);
+    redirect("/auth/error");
+  }
+
+  revalidatePath("/login", "layout");
+  redirect("/login");
+}

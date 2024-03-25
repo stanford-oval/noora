@@ -15,8 +15,6 @@ export async function GET(request: NextRequest) {
   redirectTo.searchParams.delete("token_hash");
   redirectTo.searchParams.delete("type");
 
-  console.log({ token_hash, type, next, redirectTo });
-
   if (token_hash && type) {
     const supabase = createClient();
 
@@ -36,5 +34,6 @@ export async function GET(request: NextRequest) {
   console.log("Redirecting to", redirectTo.toString());
 
   redirectTo.searchParams.delete("next");
+  redirectTo.pathname = "/onboarding";
   return NextResponse.redirect(redirectTo);
 }

@@ -41,7 +41,6 @@ export async function signup(formData: FormData) {
         last_name: formData.get("lastname") as string,
       },
     },
-    redirectTo: "/onboarding",
   };
 
   const { error } = await supabase.auth.signUp(data);

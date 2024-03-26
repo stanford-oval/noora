@@ -1,12 +1,13 @@
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/lib/utils/supabase/server";
 import Logout from "../_components/Logout";
-import protectRoute from "@/utils/supabase/protectRoute";
+import protectRoute from "@/lib/utils/supabase/protectRoute";
 import DeleteAccount from "../_components/DeleteAccount";
 
 async function Dashboard() {
+  await protectRoute();
+
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
-  await protectRoute();
 
   return (<div>
     <code>

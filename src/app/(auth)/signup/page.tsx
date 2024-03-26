@@ -1,4 +1,4 @@
-import { signup } from "@/utils/supabase/actions";
+import { signup } from "@/lib/utils/supabase/auth/actions";
 
 function SignUp() {
   return <div>

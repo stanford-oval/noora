@@ -1,4 +1,4 @@
-import protectRoute from "@/utils/supabase/protectRoute";
+import protectRoute from "@/lib/utils/supabase/protectRoute";
 
 async function Practice() {
   await protectRoute();

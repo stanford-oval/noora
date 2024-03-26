@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { login } from '../../../utils/supabase/actions'
-import { createClient } from '@/utils/supabase/server';
+import { login } from '../../../lib/utils/supabase/auth/actions'
+import { createClient } from '@/lib/utils/supabase/server';
 import { redirect } from 'next/navigation';
 
 export default async function Login() {

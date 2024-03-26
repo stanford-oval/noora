@@ -1,6 +1,6 @@
 "use client";
 
-import { deleteAccount } from "@/utils/supabase/actions";
+import { deleteAccount } from "@/lib/utils/supabase/auth/actions";
 
 function DeleteAccount() {
   return <button onClick={() => {

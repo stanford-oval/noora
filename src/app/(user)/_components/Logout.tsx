@@ -1,6 +1,6 @@
 "use client";
 
-import { signout } from "@/utils/supabase/actions";
+import { signout } from "@/lib/utils/supabase/auth/actions";
 
 function Logout() {
   return <button onClick={

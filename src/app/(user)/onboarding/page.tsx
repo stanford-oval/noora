@@ -1,4 +1,4 @@
-import { createUserRow } from "@/lib/onboarding/utils";
+import { createUserRow } from "@/lib/utils/onboarding";
 import protectRoute from "@/lib/utils/supabase/protectRoute";
 import Link from "next/link";
 

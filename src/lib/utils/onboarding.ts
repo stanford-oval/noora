@@ -1,4 +1,4 @@
-import { createClient } from "../utils/supabase/server";
+import { createClient } from "./supabase/server";
 
 /**
  * Create a user in the public.users table if they don't already exist.
@@ -28,8 +28,8 @@ const createUserRow = async () => {
     const { error: insertError } = await supabase.from("users").insert([
       {
         id,
-        first_name,
-        last_name,
+        first_name: first_name.trim(),
+        last_name: last_name.trim(),
       },
     ]);
     if (insertError) {

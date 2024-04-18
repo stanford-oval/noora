@@ -6,11 +6,26 @@ import { createClient } from "./server";
 /**
  * Force user to login before accessing the route.
  */
-export default async function protectRoute() {
+export default async function protectRoute(adminOnly = false) {
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
 
+  console.log("protectRoute", data, error);
+
   if (error || !data?.user) {
     redirect("/login");
+  }
+
+  if (adminOnly) {
+    // pull data from the users table and check if isAdmin is true
+    const { data: usersData, error: usersError } = await supabase
+      .from("users")
+      .select("isAdmin")
+      .eq("id", data.user.id)
+      .single();
+
+    if (usersError || !usersData?.isAdmin) {
+      redirect("/login");
+    }
   }
 }

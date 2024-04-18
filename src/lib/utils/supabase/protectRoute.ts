@@ -5,6 +5,7 @@ import { createClient } from "./server";
 
 /**
  * Force user to login before accessing the route.
+ * @param {boolean} adminOnly - If true, only allow users with isAdmin flag set to true.
  */
 export default async function protectRoute(adminOnly = false) {
   const supabase = createClient();

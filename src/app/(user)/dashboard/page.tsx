@@ -10,15 +10,13 @@ async function Dashboard() {
 
   const { authUser, user } = await getUser();
 
-  return (<div>
-    <h1>Hey {user.first_name}!</h1>
-    <p>Your email is {authUser.email} and your user id is {user.id}.</p>
-    <Link href="/practice"><button className="primary">Go to Practice page</button></Link>
+  return (<div className="min-h-screen container pt-20">
+    <h1 className="text-2xl lg:text-3xl">Welcome back, {user.first_name}!</h1>
+    <p className="text-gray-500">You are logged in under {authUser.email}.{" "}<Logout /></p>
 
-    <hr className="my-2" />
-    <div className="horizontal space-x-2">
-      <Logout />
-      <DeleteAccount />
+    <div className="serif py-12">
+      Still working on this page...
+
     </div>
   </div>);
 }

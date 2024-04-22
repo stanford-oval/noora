@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { createClient } from "@/lib/utils/supabase/client";
 import { HomeIcon, PencilIcon } from "@heroicons/react/20/solid";
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import LoginCTA from "./LoginCTA";
 import DesktopNav from "./desktop/NavContent";
 import MobileNav from "./mobile/NavContent";
-import { createClient } from "@/lib/utils/supabase/client";
-import LoginCTA from "./LoginCTA";
-import { usePathname } from 'next/navigation';
 
 const NavContent = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -42,7 +42,7 @@ const NavContent = () => {
     <div className="hidden md:flex">
       <DesktopNav items={items} />
     </div>
-    <div className="md:hidden">
+    <div className="md:hidden center-v vertical">
       <MobileNav items={items} />
     </div>
   </div>) :

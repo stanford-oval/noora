@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { signup } from '@/lib/utils/supabase/auth/actions';
 import Link from 'next/link';
 
@@ -79,11 +78,13 @@ export default async function Login() {
 
             <div>
               <button
+                id="submit"
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-noora-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-noora-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-noora-primary"
               >
                 Sign up
               </button>
+              <div className="text-sm text-center mt-2 text-gray-500/90">Please wait a few seconds after clicking sign up...</div>
             </div>
           </form>
 

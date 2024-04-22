@@ -3,13 +3,13 @@
 import { signout } from "@/lib/utils/supabase/auth/actions";
 
 function Logout() {
-  return <button onClick={
+  return <span className="serif inline-block text-red-800 cursor-pointer" onClick={
     () => {
       signout();
     }
   }>
-    Log out
-  </button>
+    Sign out?
+  </span>
 }
 
 export default Logout;

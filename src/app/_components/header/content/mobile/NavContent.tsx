@@ -1,14 +1,13 @@
-import routes from "@/data/routes";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import NavItem from "./NavItem";
 import { usePathname } from "next/navigation";
 import { NavItemType } from "../NavContent";
+import NavItem from "./NavItem";
 
 function NavContent({ items }: { items: NavItemType[] }) {
   const currPath = usePathname();
 
-  return (<div className="-ml-2 mr-2 flex items-center">
+  return (<div className="-ml-2 mr-2 flex items-center my-auto center-v">
     <Disclosure>
       {({ open }) => (
         <>
@@ -23,18 +22,14 @@ function NavContent({ items }: { items: NavItemType[] }) {
           <Disclosure.Panel className="absolute top-16 left-0 w-screen bg-white">
             <div className={`${open ? "block" : "hidden"} lg:hidden`}>
               <div className="pb-2 space-y-1 shadow-md">
-                {routes.map((r: any) => (
+                {[
+                  { name: "Dashboard", href: "/dashboard" },
+                  { name: "Practice", href: "/practice" },
+                ].map((r: any) => (
                   <NavItem
                     key={r.name}
                     name={r.name}
                     href={r.href}
-                    dropRoutes={r.dropRoutes}
-                    currPath={currPath}
-                    active={
-                      r.href !== "/"
-                        ? currPath.startsWith(r.href)
-                        : r.href == currPath
-                    }
                   />
                 ))}
                 {/* <div className="flex items-center mx-4 py-1">

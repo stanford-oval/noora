@@ -9,7 +9,7 @@ import protectRoute from "@/lib/utils/supabase/protectRoute";
 async function Practice() {
   await protectRoute();
 
-  return <div>Practice</div>
+  return <div className="min-h-screen vertical center-v center-h serif">Still working on this...</div>
 }
 
 export default Practice;

@@ -71,3 +71,17 @@ input {
 .border-1 {
   border-width: 1px;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.marcellus {
+  font: var(--font-marcellus), serif;
+}
+
+body {
+  font: var(--font-lato), sans-serif;
+}

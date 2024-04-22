@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Lato, Marcellus } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/header/Header";
 import Footer from "./_components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const marcellus = Marcellus({ subsets: ["latin"], weight: "400", variable: "--font-marcellus" });
+const lato = Lato({ subsets: ["latin"], weight: ["100", "300", "400", "700", "900"], variable: "--font-lato" });
+const fonts = [marcellus, lato];
 
 export const metadata: Metadata = {
   title: "Noora",
@@ -18,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={fonts.map((f) => f.className).join(" ")}>
         <Header />
         {children}
         <Footer />

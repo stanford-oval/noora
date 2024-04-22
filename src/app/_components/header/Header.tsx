@@ -30,9 +30,9 @@ export default function Header() {
               </span>
             </div>
           </Link>
-          <div className="flex">
+          <div className="flex h-full">
             {/* desktop navigation */}
-            <div className="hidden md:ml-6 md:flex md:space-x-6 lg:space-x-8">
+            <div className="hidden h-full md:ml-6 md:flex md:space-x-6 lg:space-x-8">
               {routes.map((r: any) => (
                 <NavItem
                   key={r.name}

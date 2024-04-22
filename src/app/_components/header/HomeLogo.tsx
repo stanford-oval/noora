@@ -12,9 +12,9 @@ function HomeLogo() {
           height={64}
           alt="Noora logo"
         />
-        <span className="font-bold tracking-wide text-xl text-noora-primary">
+        <h1 className="font-bold tracking-widest text-lg text-noora-primary">
           NOORA
-        </span>
+        </h1>
       </div>
     </Link>
   )

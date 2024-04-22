@@ -11,6 +11,13 @@ const fonts = [serif, sans];
 export const metadata: Metadata = {
   title: "Noora",
   description: "AI coaching for people with ASD.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://noora.app",
+    title: "Noora: AI Coaching for People with ASD",
+    description: "Improve your social conversation using AI.",
+  }
 };
 
 export default function RootLayout({

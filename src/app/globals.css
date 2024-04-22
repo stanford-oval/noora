@@ -45,19 +45,29 @@
   }
 }
 
-/* TEMP STYLES */
-input {
-  @apply border border-gray-300 rounded-md;
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+.trans {
+  @apply transition ease-in-out;
+}
+
+.trans-150 {
+  @apply transition ease-in-out duration-150;
+}
+
+.trans-300,
+a,
 button {
-  @apply bg-gray-300 text-gray-800 px-4 py-2 rounded-md;
+  @apply transition ease-in-out duration-300;
 }
 
-button.primary {
-  @apply bg-blue-500 text-white;
+input {
+  @apply placeholder-slate-400 ring-0 focus:ring-0;
+  opacity: 1;
 }
 
-a {
-  @apply text-blue-500;
+.border-1 {
+  border-width: 1px;
 }

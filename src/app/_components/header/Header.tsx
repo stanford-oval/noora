@@ -8,21 +8,23 @@ import Image from "next/image";
 import MobileNavItem from "./MobileNavItem";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import routes from "@/data/routes";
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
-  // this is  aserver component, so can't use window object
-  const currPath = "/"; //window.location.pathname;
+  const currPath = usePathname();
   return (
     <nav className="z-40 w-screen bg-white shadow fixed">
       <div className="container">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-16 items-center">
           <Link href="/">
             <div className="flex-shrink-0 flex items-center">
-              {/* <Image
+              <Image
                 className="block h-12 w-auto mr-1"
                 src="/img/logos/noora/lamp.png"
+                width={64}
+                height={64}
                 alt="Noora logo"
-              /> */}
+              />
               <span className="font-bold tracking-wide text-xl text-noora-primary">
                 NOORA
               </span>

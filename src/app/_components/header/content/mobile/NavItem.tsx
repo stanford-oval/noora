@@ -3,13 +3,13 @@ import Link from "next/link";
 import { clsx } from "clsx";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
-export default function MobileNavItem({
+export default function NavItem({
   name,
   href,
   active,
   currPath,
   dropRoutes,
-}: MobileNavItemProps) {
+}: NavItemProps) {
   const [expanded, setExpanded] = useState(active); // for collapsable
   const toggle = () => setExpanded(!expanded);
 
@@ -75,7 +75,7 @@ function NestedItem({ href, name, active }: NestedItemProps) {
   );
 }
 
-type MobileNavItemProps = {
+type NavItemProps = {
   name: string;
   href: string;
   active: boolean;

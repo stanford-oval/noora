@@ -6,9 +6,14 @@ export default function Footer() {
   return (
     <footer className="bg-gray-100">
       <div className="container pt-12 pb-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-        <div className="max-w-3xl  mx-auto">
-          <p className="text-center text-base text-gray-500">
-            The Noora project is a collaboration between
+        <div>
+          <h1 className="text-center mx-auto font-bold tracking-tight text-lg text-gray-500">
+            N O O R A
+          </h1>
+        </div>
+        <div className="max-w-2xl mt-8 mx-auto">
+          <p className="text-center text-sm leading-5 text-gray-500">
+            Noora is part of a joint research project between
             <a
               href="https://oval.cs.stanford.edu"
               target="_blank"
@@ -29,7 +34,7 @@ export default function Footer() {
             from Stanford's Dept. of Psychiatry and Behavioral Sciences.
           </p>
         </div>
-        <div className="mt-8 text-center text-base text-gray-500">
+        <div className="mt-9 text-center text-base text-gray-500">
           <a
             href="https://vercel.com/?utm_source=[stanford-oval]&utm_campaign=oss"
             target="_blank"

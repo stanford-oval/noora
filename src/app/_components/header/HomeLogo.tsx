@@ -12,8 +12,8 @@ function HomeLogo() {
           height={64}
           alt="Noora logo"
         />
-        <h1 className="font-bold tracking-widest text-lg text-noora-primary">
-          NOORA
+        <h1 className="font-bold tracking-tighter text-lg text-noora-primary">
+          N O O R A
         </h1>
       </div>
     </Link>

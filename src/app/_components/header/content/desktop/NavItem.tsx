@@ -20,7 +20,7 @@ export default function NavItem({
     <Link href={href}>
       <div
         className={clsx(
-          "h-full inline-flex items-center px-1 pt-1 border-b-4 text-lg font-medium trans-300",
+          "serif h-full inline-flex items-center px-1 pt-1 border-b-4 text-lg font-medium trans-300",
           active ? "border-noora-primary text-gray-900" : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
         )}
       >

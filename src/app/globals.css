@@ -72,19 +72,19 @@ input {
   border-width: 1px;
 }
 
+body {
+  font-family: var(--font-sans), sans-serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-.marcellus {
-  font: var(--font-marcellus), serif;
-}
-
-body {
-  font: var(--font-lato), sans-serif;
-  letter-spacing: 0.2px;
+button,
+.serif {
+  font-family: var(--font-serif), serif;
 }
 
 /* pulse button */

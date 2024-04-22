@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import Image from 'next/image';
 import { createClient } from '@/lib/utils/supabase/server';
 import { login } from '@/lib/utils/supabase/auth/actions';
+import Link from 'next/link';
 
 export default async function Login() {
   const supabase = createClient();
@@ -79,9 +80,9 @@ export default async function Login() {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Don't have an account?{' '}
-            <a href="#" className="font-semibold leading-6 text-noora-primary hover:text-noora-primary-dark">
-              Sign up
-            </a>
+            <Link href="/signup" className="font-semibold leading-6 text-noora-primary hover:text-noora-primary-dark">
+              Sign up &rarr;
+            </Link>
           </p>
         </div>
       </div>

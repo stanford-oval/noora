@@ -1,7 +1,16 @@
+import { createClient } from "@/lib/utils/supabase/server";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+  const supabase = createClient();
+  const { data, error } = await supabase.auth.getUser();
+
+  if (data?.user) {
+    redirect("/dashboard");
+  }
+
   return (
     <div className="bg-white min-h-screen py-12 vertical center-v">
       <div className="relative isolate px-6 pt-14 lg:px-8">
@@ -19,14 +28,14 @@ export default function Home() {
         </div>
         <div className="mx-auto max-w-2xl ">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            <h1 className="marcellus text-4xl font-bold text-gray-900 sm:text-5xl">
               Improve your <span className="text-noora-primary">social conversation</span> using AI.
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Noora<sub className="italic">beta</sub> is an AI coach who guides you through a diverse set of social scenarios.
+            <p className="mt-6 text-xl leading-8 text-gray-600">
+              <span className="serif">Noora<sub className="italic">beta</sub></span> is an AI coach who guides you through a diverse set of social scenarios. Sign up to try it out!
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link href="/noora">
+              <Link href="/signup">
                 <button className="pulse-button rounded-full outline-none px-6 py-4 flex text text-white bg-noora-primary hover:bg-noora-primary-dark font-medium flex items-center justify-center">
                   <div>Create your account</div>
                   <ArrowRightIcon className="w-5 h-5 ml-2" />
@@ -35,22 +44,22 @@ export default function Home() {
             </div>
           </div>
           <div className="pb-10 pt-14 mx-auto vertical center-v center-h">
-            <div className="mb-4 text-center">
+            <h2 className="mb-3 text-center">
               Developed by{" "}
               <a href="https://oval.cs.stanford.edu" target="_blank" rel="noopener noreferrer"
                 className="font-semibold text-[#8C1515]">
                 Stanford's Open Virtual Assistant Lab
               </a>
-            </div>
+            </h2>
             <div className="flex gap-x-4 justify-center md:justify-start">
               <img
                 src="/img/logos/stanford/medicine.png"
-                className="h-9 lg:h-11 w-auto"
+                className="h-8 sm:h-9 lg:h-11 w-auto"
                 alt="Stanford Medicine"
               />
               <img
                 src="/img/logos/stanford/engineering.png"
-                className="h-10 lg:h-12 mt-0.5 w-auto"
+                className="h-9 sm:h-10 lg:h-12 mt-0.5 w-auto"
                 alt="Stanford Engineering"
               />
             </div>

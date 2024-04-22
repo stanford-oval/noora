@@ -80,7 +80,7 @@ export default async function Login() {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Don't have an account?{' '}
-            <Link href="/signup" className="font-semibold leading-6 text-noora-primary hover:text-noora-primary-dark">
+            <Link href="/signup" className="serif font-semibold leading-6 text-noora-primary hover:text-noora-primary-dark">
               Sign up &rarr;
             </Link>
           </p>

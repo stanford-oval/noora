@@ -20,7 +20,7 @@ export async function login(formData: FormData) {
 
   if (error) {
     console.error(error);
-    redirect("/auth/error");
+    redirect("/auth/error?type=wrong-credentials");
   }
 
   revalidatePath("/dashboard", "layout");

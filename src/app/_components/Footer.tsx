@@ -13,7 +13,7 @@ export default function Footer() {
         </div>
         <div className="max-w-2xl mt-8 mx-auto">
           <p className="text-center text-sm leading-5 text-gray-500">
-            Noora is part of a joint research project between
+            Noora is part of a <a href="https://github.com/stanford-oval/noora" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600 trans-150">joint research project</a> between
             <a
               href="https://oval.cs.stanford.edu"
               target="_blank"

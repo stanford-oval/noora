@@ -28,7 +28,7 @@ export default async function Home() {
         </div>
         <div className="mx-auto max-w-2xl ">
           <div className="text-center">
-            <h1 className="marcellus text-4xl font-bold text-gray-900 sm:text-5xl">
+            <h1 className="tracking-tight lg:tracking-normal text-4xl font-bold text-gray-900 sm:text-5xl">
               Improve your <span className="text-noora-primary">social conversation</span> using AI.
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-600">

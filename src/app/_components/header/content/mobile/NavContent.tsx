@@ -3,8 +3,9 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import NavItem from "./NavItem";
 import { usePathname } from "next/navigation";
+import { NavItemType } from "../NavContent";
 
-function NavContent({ items }: { items: { name: string, href: string, icon?: React.ReactNode }[] }) {
+function NavContent({ items }: { items: NavItemType[] }) {
   const currPath = usePathname();
 
   return (<div className="-ml-2 mr-2 flex items-center">

@@ -4,10 +4,12 @@ import DesktopNav from "./desktop/NavContent";
 import MobileNav from "./mobile/NavContent";
 import { createClient } from "@/lib/utils/supabase/client";
 import LoginCTA from "./LoginCTA";
+import { usePathname } from 'next/navigation';
 
 const NavContent = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [items, setItems] = useState<NavItemType[]>([]);
+  const pathname = usePathname();
 
   useEffect(() => {
     const supabase = createClient();
@@ -27,7 +29,7 @@ const NavContent = () => {
     return () => {
       listener.subscription.unsubscribe();
     };
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     setItems([

@@ -8,10 +8,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        noora: {
+          primary: {
+            DEFAULT: "#6940b6",
+            light: "#7447c9",
+            dark: "#5b379e",
+            dark1: "#3f2278",
+            dark2: "#2c1458",
+          },
+          secondary: {
+            bright: "#283975",
+            light: "#1f306b",
+            DEFAULT: "#192245",
+            dark: "#0d142b",
+          },
+        },
       },
     },
   },
